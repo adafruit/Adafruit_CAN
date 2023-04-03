@@ -7,8 +7,8 @@
 CANSAME5x CAN;
 
 void setup() {
-  Serial.begin(9600);
-  while (!Serial);
+  Serial.begin(11520);
+  while (!Serial) delay(10);
 
   Serial.println("CAN Receiver");
 
@@ -20,8 +20,9 @@ void setup() {
   // start the CAN bus at 250 kbps
   if (!CAN.begin(250000)) {
     Serial.println("Starting CAN failed!");
-    while (1);
+    while (1) delay(10);
   }
+  Serial.println("Starting CAN!");
 }
 
 void loop() {
