@@ -7,7 +7,7 @@
 CANSAME5x CAN;
 
 void setup() {
-  Serial.begin(11520);
+  Serial.begin(115200);
   while (!Serial) delay(10);
 
   Serial.println("CAN Receiver");
