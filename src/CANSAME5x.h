@@ -2,6 +2,9 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full
 // license information.
 
+#ifndef CANSAME5x_H
+#define CANSAME5x_H
+
 #include "CANController.h"
 
 class CANSAME5x : public CANControllerClass {
@@ -51,3 +54,5 @@ private:
   friend void CAN0_Handler(void);
   friend void CAN1_Handler(void);
 };
+
+#endif
