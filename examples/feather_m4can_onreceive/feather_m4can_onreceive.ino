@@ -12,6 +12,11 @@ void setup() {
 
   Serial.println("CAN Receiver Callback");
 
+  pinMode(PIN_CAN_STANDBY, OUTPUT);
+  digitalWrite(PIN_CAN_STANDBY, false); // turn off STANDBY
+  pinMode(PIN_CAN_BOOSTEN, OUTPUT);
+  digitalWrite(PIN_CAN_BOOSTEN, true); // turn on booster
+
   // start the CAN bus at 250 kbps
   if (!CAN.begin(250000)) {
     Serial.println("Starting CAN failed!");
