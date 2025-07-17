@@ -27,7 +27,7 @@ namespace {
 #define state (reinterpret_cast<_canSAME5x_state *>(this->_state))
 
 #define DIV_ROUND(a, b) (((a) + (b) / 2) / (b))
-#define DIV_ROUND_UP(a, b) (((a) + (b)-1) / (b))
+#define DIV_ROUND_UP(a, b) (((a) + (b) - 1) / (b))
 
 #define GCLK_CAN1 GCLK_PCHCTRL_GEN_GCLK1_Val
 #define GCLK_CAN0 GCLK_PCHCTRL_GEN_GCLK1_Val
