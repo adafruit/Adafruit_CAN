@@ -438,8 +438,11 @@ void CANSAME5x::handleInterrupt() {
   uint32_t ir = hw->IR.reg;
 
   if (ir & CAN_IR_RF0N) {
-    while (int i = parsePacket())
-      _onReceive(i);
+    while (true) {
+      if (!hw->RXF0S.bit.F0FL)
+        break;
+      _onReceive(parsePacket());
+    }
   }
 
   hw->IR.reg = ir;
